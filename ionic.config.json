@@ -1,0 +1,7 @@
+{
+  "name": "QR_Scanner",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

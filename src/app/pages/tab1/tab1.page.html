@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-toolbar no-border color="secondary" class="ColorCUR">
+
+    <ion-buttons slot="start">
+      <ion-button (click)="DesplegarMenu()">
+        <ion-icon slot="icon-only" name="menu">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <ion-title>
+      Analyzer QR
+    </ion-title>
+  </ion-toolbar>
+
+</ion-header>
+
+
+
+<ion-menu side="start" menuId="first" contentId="menuPrincipal">
+  <ion-header>
+    <ion-toolbar color="secondary" class="ColorCUR">
+      <ion-title>Menu Principal</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content>
+    <ion-list>
+      <!-- <ion-item >Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item> -->
+      <ion-item routerLink="/">
+        <ion-icon slot="start" name="log-out" color="danger"></ion-icon>
+        Cerrar Sesión
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<ion-router-outlet id="menuPrincipal"></ion-router-outlet>
+
+
+<ion-content>
+  <ion-list lines="none">
+    <ion-list-header>
+      <ion-label>Recursos</ion-label>
+      </ion-list-header>
+    <ion-item href="https://urepublicana.edu.co/pages/index.php#">
+        <ion-icon slot="start" color="primary" name="globe"></ion-icon>
+        <ion-label>Página principal</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

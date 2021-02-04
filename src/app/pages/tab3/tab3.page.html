@@ -1,0 +1,65 @@
+<ion-header no-border>
+        <ion-toolbar color="secondary" class="ColorCUR">
+        <ion-title>
+            Historico Escaneos
+        </ion-title>
+
+      <!--Boton para desplegar Menú-->
+        <ion-buttons slot="start">
+            <ion-button (click)="DesplegarMenu()">
+              <ion-icon slot="icon-only" name="menu">
+              </ion-icon>
+            </ion-button>
+          </ion-buttons>
+
+    <!--Boton para enviar escaneos a correo electronico-->
+        <ion-buttons slot="end">
+            <ion-button (click)="enviarCorreo()"
+                        color="dark">
+                        <ion-icon name="send" slot="icon-only"></ion-icon>
+            </ion-button>
+        </ion-buttons>
+
+        </ion-toolbar>
+</ion-header>
+
+<ion-menu side="start" menuId="first" contentId="menuPrincipal">
+    <ion-header>
+      <ion-toolbar color="secondary" class="ColorCUR">
+        <ion-title>Analizador QR - CUR</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+      <!-- <ion-item >Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item>
+      <ion-item>Menu Item</ion-item> -->
+        <ion-item routerLink="/">
+          <ion-icon slot="start" name="log-out" color="danger"></ion-icon>
+          Cerrar Sesión
+        </ion-item>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="menuPrincipal"></ion-router-outlet>
+
+<ion-content>
+        <ion-list no-border>
+
+          <!-- Barra de busqueda de escaneos -->
+            <ion-searchbar>
+            </ion-searchbar>
+
+                <ion-item *ngFor="let registro of dataLocal.Historico"
+                    (click)="abrirRegistro( registro )"
+                    detail>
+
+        <ion-icon slot="start" name="globe" color="primary"></ion-icon>
+                    <ion-label>
+                    <h2>{{ registro.text }}</h2>
+                    <p>{{ registro.created | date: 'medium' }}</p>
+                    </ion-label>
+                </ion-item>
+        </ion-list>
+</ion-content>
